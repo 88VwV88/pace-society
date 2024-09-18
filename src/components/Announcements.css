@@ -1,0 +1,34 @@
+
+.announcements {
+    text-align: center;
+    margin: 20px;
+    padding-top: 30px;
+    font-size: larger;
+  }
+  
+  .announcement-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .announcement {
+    width: 30%;
+    border-left: 1px solid #ddd;
+    padding-left: 10px;
+  }
+  
+  .announcement:first-child {
+    border-left: none;
+  }
+  
+  .more-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #007bff;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
