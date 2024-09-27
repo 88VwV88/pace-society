@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import photo from "../assets/sign in.jpg";
+import checkLogin from "../auth";
 
-const Login = (props) => {
+async function loginUser({ rollno, password }) {
+  return await checkLogin({ rollno, password });
+}
+
+const Login = ({ isLogin, setLogin }) => {
   let navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     rollno: "",
     password: "",
   });
-  const setLogin = props.setLogin;
 
   function changeHandler(event) {
     setLoginData((prevData) => ({
@@ -18,14 +22,18 @@ const Login = (props) => {
     }));
   }
 
-  function submitHandler(event) {
-    event.preventDefault();
-    const data = event.target.value;
-    console.log("data:", data);
-    console.log(loginData);
-    setLogin(true);
+  async function submitHandler(e) {
+    e.preventDefault();
+
+    setLogin(await loginUser(loginData));
+
+    if (isLogin) {
+      toast.success("Login successful!");
+    } else {
+      toast.error("Login failed invalid credentials!");
+    }
+
     navigate("/");
-    toast.success("Login Successfully");
   }
 
   return (
@@ -43,7 +51,7 @@ const Login = (props) => {
           </h2>
           <p className="text-xl text-gray-600 text-center">Welcome back!</p>
 
-          <form onSubmit={submitHandler}>
+          <form method="post" onSubmit={e => submitHandler(e)} action="/login">
             <div className="mt-4">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Roll Number

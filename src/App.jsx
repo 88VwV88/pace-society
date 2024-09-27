@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
@@ -11,7 +13,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Contact from "./pages/Contact";
 
-function App() {
+export default function App() {
   const [isLogin, setLogin] = useState(false);
   return (
     <div>
@@ -26,7 +28,7 @@ function App() {
         <Route
           path="login"
           element={<Login isLogin={isLogin} setLogin={setLogin}></Login>}
-        ></Route>
+        >{"<!--app-login-->"}</Route>
         <Route path="dashboard" element={<DashBoard></DashBoard>}></Route>
         <Route path="about" element={<About></About>}></Route>
         <Route path="contact" element={<Contact></Contact>}></Route>
@@ -36,5 +38,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

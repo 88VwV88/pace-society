@@ -1,9 +1,10 @@
 import React from "react";
-import photo from "../assets/jagdeep.jpg"
-import photo1 from "../assets/nagendra.jpg"
-import photo2 from "../assets/renu.jpg"
 
-const Team = () => {
+import photo from "../assets/jagdeep.jpg";
+import photo1 from "../assets/nagendra.jpg";
+import photo2 from "../assets/renu.jpg";
+
+export default function Team() {
   return (
     <section className="bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -25,10 +26,9 @@ const Team = () => {
                 Dr Rajneesh Rani
               </h3>
               <p className="text-gray-600">
-              Assistant Professor (Grade-II)
-Department of Computer Science and Engineering
-
-Dr B R Ambedkar National Institute of Technology, Jalandhar
+                Assistant Professor (Grade-II) Department of Computer Science
+                and Engineering Dr B R Ambedkar National Institute of
+                Technology, Jalandhar
               </p>
             </div>
           </div>
@@ -43,13 +43,12 @@ Dr B R Ambedkar National Institute of Technology, Jalandhar
             </div>
             <div className="ml-4 text-left">
               <h3 className="text-xl font-semibold text-gray-700 mb-2">
-               Dr Nagendra Pratap Singh
+                Dr Nagendra Pratap Singh
               </h3>
               <p className="text-gray-600">
-              Assistant Professor (Grade-I)
-Department of Computer Science and Engineering
-
-Dr B R Ambedkar National Institute of Technology, Jalandhar
+                Assistant Professor (Grade-I) Department of Computer Science and
+                Engineering Dr B R Ambedkar National Institute of Technology,
+                Jalandhar
               </p>
             </div>
           </div>
@@ -64,13 +63,12 @@ Dr B R Ambedkar National Institute of Technology, Jalandhar
             </div>
             <div className="ml-4 text-left">
               <h3 className="text-xl font-semibold text-gray-700 mb-2">
-               Dr Renu Dhir
+                Dr Renu Dhir
               </h3>
               <p className="text-gray-600">
-              Associate Professor
-Department of Computer Science and Engineering
-
-Dr B R Ambedkar National Institute of Technology, Jalandhar
+                Associate Professor Department of Computer Science and
+                Engineering Dr B R Ambedkar National Institute of Technology,
+                Jalandhar
               </p>
             </div>
           </div>
@@ -78,6 +76,4 @@ Dr B R Ambedkar National Institute of Technology, Jalandhar
       </div>
     </section>
   );
-};
-
-export default Team;
+}

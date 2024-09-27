@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const Signup = (props) => {
+export default function Signup(props) {
   let navigate = useNavigate();
   const [signupData, setSignupData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const setLogin = props.setLogin;
@@ -24,13 +24,13 @@ const Signup = (props) => {
     event.preventDefault();
 
     if (signupData.password !== signupData.confirmPassword) {
-      toast.error('Passwords do not match');
+      toast.error("Passwords do not match");
       return;
     }
 
     console.log(signupData);
-    setLogin(true); 
-    navigate("../dashboard"); 
+    setLogin(true);
+    navigate("../dashboard");
     toast.success("Sign-Up Successful");
   }
 
@@ -40,13 +40,17 @@ const Signup = (props) => {
         <div
           className="visible lg:block lg:w-1/2 bg-cover"
           style={{
-            backgroundImage: "url('https://nitj.ac.in/files/1684315531854-IT_Building,_NIT_Jalandhar_05.JPG')",
-            
+            backgroundImage:
+              "url('https://nitj.ac.in/files/1684315531854-IT_Building,_NIT_Jalandhar_05.JPG')",
           }}
         ></div>
         <div className="w-full p-8 lg:w-1/2">
-          <h2 className="text-2xl font-semibold text-gray-700 text-center">PACE SOCIETY</h2>
-          <p className="text-xl text-gray-600 text-center">Create your account</p>
+          <h2 className="text-2xl font-semibold text-gray-700 text-center">
+            PACE SOCIETY
+          </h2>
+          <p className="text-xl text-gray-600 text-center">
+            Create your account
+          </p>
           <div className="mt-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Name
@@ -118,6 +122,4 @@ const Signup = (props) => {
       </div>
     </div>
   );
-};
-
-export default Signup;
+}
